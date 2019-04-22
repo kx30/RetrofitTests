@@ -1,6 +1,7 @@
 package com.example.testtaskwebantapplicationkotlin.model
 
-data class SomethingList (
+data class JsonContent(
+    val countOfPages: Int,
     val data: ArrayList<PhotoContent>
 )
 
@@ -11,11 +12,7 @@ data class PhotoContent (
     val description: String,
     val new: Boolean,
     val popular: Boolean
-) {
-    operator fun set(position: Int, value: List<PhotoContent>) {
-
-    }
-}
+)
 
 data class Image (
     val id: Int = 0,

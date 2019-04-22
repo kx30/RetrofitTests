@@ -24,7 +24,7 @@ class ImageAdapter(private var imageList: List<Image>, private var detailInforma
             .resize(500, 500)
             .into(holder.image)
 
-        holder.imageId.text = imageList[position].id.toString()
+        holder.imageId.text = detailInformation[position].id.toString()
 
         holder.setUpDetailInformation(detailInformation[position], imageList[position].contentUrl)
     }

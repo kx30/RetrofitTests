@@ -16,7 +16,9 @@ object RetrofitClient {
                     .baseUrl("http://gallery.dev.webant.ru/api/")
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                    .client(OkHttpClient.Builder().addNetworkInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY }).build())
+                    .client(OkHttpClient.Builder().addNetworkInterceptor(HttpLoggingInterceptor().apply {
+                        level = HttpLoggingInterceptor.Level.BODY
+                    }).build())
                     .build()
             }
             return ourInstance!!
