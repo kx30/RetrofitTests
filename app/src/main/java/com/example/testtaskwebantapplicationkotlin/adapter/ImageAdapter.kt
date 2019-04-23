@@ -9,7 +9,7 @@ import com.example.testtaskwebantapplicationkotlin.model.Image
 import com.example.testtaskwebantapplicationkotlin.model.PhotoContent
 import com.squareup.picasso.Picasso
 
-class ImageAdapter(private var imageList: List<Image>, private var detailInformation: List<PhotoContent>) :
+class ImageAdapter(private var detailInformation: List<PhotoContent>) :
     RecyclerView.Adapter<ImageViewHolder>() {
 
     override fun onCreateViewHolder(view: ViewGroup, position: Int): ImageViewHolder {
@@ -20,16 +20,18 @@ class ImageAdapter(private var imageList: List<Image>, private var detailInforma
 
     override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         Picasso.get()
-            .load("http://gallery.dev.webant.ru/media/" + imageList[position].contentUrl)
+            .load("http://gallery.dev.webant.ru/media/" + detailInformation[position].image.contentUrl)
             .resize(500, 500)
             .into(holder.image)
 
         holder.imageId.text = detailInformation[position].id.toString()
 
-        holder.setUpDetailInformation(detailInformation[position], imageList[position].contentUrl)
+        holder.setUpDetailInformation(detailInformation[position], detailInformation[position].image.contentUrl)
     }
 
     override fun getItemCount(): Int {
-        return imageList.size
+        return detailInformation.size
     }
+
+
 }
