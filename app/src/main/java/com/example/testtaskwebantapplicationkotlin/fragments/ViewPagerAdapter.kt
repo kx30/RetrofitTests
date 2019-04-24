@@ -1,8 +1,10 @@
-package com.example.testtaskwebantapplicationkotlin
+package com.example.testtaskwebantapplicationkotlin.fragments
 
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
+import com.example.testtaskwebantapplicationkotlin.fragments.NewFragment
+import com.example.testtaskwebantapplicationkotlin.fragments.PopularFragment
 
 class ViewPagerAdapter internal constructor(fm: FragmentManager): FragmentPagerAdapter(fm) {
 

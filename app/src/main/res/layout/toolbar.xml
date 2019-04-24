@@ -5,4 +5,12 @@
     android:layout_height="?attr/actionBarSize"
     android:background="@color/whitish">
 
+    <TextView
+        android:text="Anterest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"/>
+
 </android.support.v7.widget.Toolbar>

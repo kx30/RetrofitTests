@@ -1,4 +1,4 @@
-package com.example.testtaskwebantapplicationkotlin
+package com.example.testtaskwebantapplicationkotlin.fragments
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.testtaskwebantapplicationkotlin.R
 import com.example.testtaskwebantapplicationkotlin.adapter.ImageAdapter
 import com.example.testtaskwebantapplicationkotlin.model.PhotoContent
 import com.example.testtaskwebantapplicationkotlin.retrofit.Api
@@ -23,10 +24,9 @@ abstract class BaseFragment<T>: Fragment() {
     protected var detailInformationList: ArrayList<T> = ArrayList()
     protected var currentPage: Int = 1
     protected var totalPages: Int? = null
+    protected abstract fun downloadData(page: Int)
 
-    abstract fun downloadData(page: Int)
     private var lastVisibleItemPosition: Int? = null
-
     private var isDownloaded: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {

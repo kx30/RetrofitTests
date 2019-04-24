@@ -1,13 +1,12 @@
-package com.example.testtaskwebantapplicationkotlin
+package com.example.testtaskwebantapplicationkotlin.fragments
 
 import com.example.testtaskwebantapplicationkotlin.model.PhotoContent
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class PopularFragment : BaseFragment<PhotoContent>() {
-
+class NewFragment : BaseFragment<PhotoContent>() {
     override fun downloadData(page: Int) {
-        val disposable = jsonApi.getPopularImages(page = page)
+        val disposable = jsonApi.getNewImages(page = page)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ jsonList ->
@@ -21,5 +20,6 @@ class PopularFragment : BaseFragment<PhotoContent>() {
             })
         compositeDisposable.addAll(disposable)
     }
+
 
 }
